@@ -28,6 +28,7 @@ associate_files () {
             reg add "$classes\\nvim.$ft" //ve //t "$t_sz" //d "${ftt[$ft]}" //f 1>/dev/null || return
             reg add "$classes\\nvim.$ft\\DefaultIcon" //ve //t "$t_ex" //d "$icon" //f 1>/dev/null || return
             reg add "$classes\\nvim.$ft\\shell\\open" //v "Icon" //t "$t_ex" //d "$prog" //f 1>/dev/null || return
+            reg add "$classes\\nvim.$ft\\shell\\open" //v "FriendlyAppName" //t "$t_sz" //d "$name" //f 1>/dev/null || return
             reg add "$classes\\nvim.$ft\\shell\\open\\command" //ve //t "$t_ex" //d "$command" //f 1>/dev/null || return
             reg add "$classes\\.$ft\\OpenWithProgids" //v "nvim.$ft" //t "$t_none" //f 1>/dev/null || return
         done
@@ -143,6 +144,7 @@ InitFileTypeTable () {
 
 install () {
     local classes='HKCU\SOFTWARE\Classes'
+    local name='NeoVim'
     local prog='%ProgramFiles%\NeoVim\bin\nvim.exe'
     local flag='"%1"'
     local command="$prog $flag"
