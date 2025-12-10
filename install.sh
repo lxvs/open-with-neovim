@@ -130,6 +130,7 @@ InitFileTypeTable () {
         ['shtml']='SHTML Source File' \
         ['srt']='SubRip Subtitle File' \
         ['ssa']='Sub Station Alpha Subtitle File' \
+        ['toml']='TOML File' \
         ['txt']='Text Document' \
         ['vb']='vb Source File' \
         ['vim']='Vimscript Source File' \
